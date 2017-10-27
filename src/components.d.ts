@@ -6,6 +6,36 @@
 
 import '@stencil/router';
 
+import { MyModal as MyModal } from './components/my-modal/my-modal';
+
+interface HTMLMyModalElement extends MyModal, HTMLElement {
+}
+declare var HTMLMyModalElement: {
+  prototype: HTMLMyModalElement;
+  new (): HTMLMyModalElement;
+};
+declare global {
+  interface HTMLElementTagNameMap {
+      "my-modal": HTMLMyModalElement;
+  }
+  interface ElementTagNameMap {
+      "my-modal": HTMLMyModalElement;
+  }
+  namespace JSX {
+      interface IntrinsicElements {
+          "my-modal": JSXElements.MyModalAttributes;
+      }
+  }
+  namespace JSXElements {
+      export interface MyModalAttributes extends HTMLAttributes {
+          mode?: string,
+          color?: string,
+        
+          mundo?: any
+      }
+  }
+}
+
 import { MyName as MyName } from './components/my-name/my-name';
 
 interface HTMLMyNameElement extends MyName, HTMLElement {
@@ -28,9 +58,12 @@ declare global {
   }
   namespace JSXElements {
       export interface MyNameAttributes extends HTMLAttributes {
+          mode?: string,
+          color?: string,
         
-          first?: any,
-          last?: any
+          first?: string,
+          last?: string,
+          modalCtrl?: any
       }
   }
 }

@@ -16,7 +16,8 @@
   },
   "dependencies": {
     "@stencil/core": "next",
-    "@stencil/router": "latest"
+    "@stencil/router": "latest",
+    "@ionic/core": "next"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",
